@@ -1,0 +1,22 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<center><h3>About Us</h3>
+  <p>Hello! We are Mingyan and Stella, two UChicago students in CMSC 13600.</p>
+  <p>We are very excited to make this app which we will be able to use to track attendance.</p>
+  <p>In our free time, we enjoy reading, watching TV, and checking out restaurants in Hyde Park.</p>
+<br>
+<br>
+<br>
+{% if user.is_authenticated %}
+  <p>Hi <mark><b>{{ user.username }}</b></mark>!</p>
+  <p>Today is {{  date  }}.</p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+</center>
+{% endif %}
+{% endblock %}
