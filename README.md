@@ -27,5 +27,45 @@ Uploading a photo of someone else's QR code: If students have access to another 
 
 AttendanceChimp should have tools to mitigate evasion through duplicate QR codes or other forms of cheating.
 
+### How to Run
+1. **Clone the Repository:**
+   Open your terminal and execute:
+   ```bash
+   git clone https://github.com/stellaaachen/attendanceapp.git
+   ```
+
+2. **Navigate to the Project Directory:**
+   ```bash
+   cd attendanceapp/attendancechimp
+   ```
+
+3. **Set Up a Virtual Environment (Optional but Recommended):**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  
+   ```
+
+4. **Install Dependencies:**
+   Ensure all required packages are installed:
+   
+6. **Apply Database Migrations:**
+   Set up the database schema:
+   ```bash
+   python manage.py migrate
+   ```
+
+7. **Create a Superuser (Optional):**
+   For admin access:
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+8. **Run the Development Server:**
+   Start the application:
+   ```bash
+   python manage.py runserver
+   ```
+   Access the app at `http://127.0.0.1:8000/` in your web browser.
+
 ## Architecture
 AttendanceChimp will be built on `python-django` (https://www.djangoproject.com/). Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. Django can run a local web-server and can easily interface with a database backend. We will be using a SQLite databaase backend. SQLite is a database engine written in the C programming language. It is not a standalone app; rather, it is a library that software developers embed in their apps.
